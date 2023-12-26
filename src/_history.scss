@@ -1,9 +1,14 @@
-.history__inner {
-    display: flex;
-    justify-content: center;
-    align-items: end;
+.history {
+    &__inner {
+        display: flex;
+        align-items: end;
+    }
 
-    .history__desc {
+    &__image {
+        width: 70%;
+    }
+
+    &__desc {
         background: #fff;
         margin-left: -146px;
         padding-top: 97px;
