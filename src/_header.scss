@@ -1,0 +1,28 @@
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 35px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+        font-size: 32px;
+        font-weight: 800;
+    }
+    &__list {
+        display: flex;
+        gap: 40px;
+    }
+
+    // .nav__item
+
+    &__item {
+    }
+}
+.logo {
+}

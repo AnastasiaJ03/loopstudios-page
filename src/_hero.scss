@@ -1,0 +1,19 @@
+.hero {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../images/desktop/image-hero.jpg") no-repeat center/cover;
+    // height: 100vh;
+    &__inner {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    &__title {
+        font-size: 60px;
+        text-transform: uppercase;
+        color: #fff;
+        max-width: 500px;
+        font-weight: 300;
+        border: 1px solid #fff;
+        padding: 25px;
+    }
+}
