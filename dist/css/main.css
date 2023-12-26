@@ -23,6 +23,8 @@ h3,
 h4,
 h5 {
   font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .container {
@@ -30,6 +32,10 @@ h5 {
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.py {
+  padding-block: 7rem;
 }
 
 .header {
@@ -69,6 +75,26 @@ h5 {
   font-weight: 300;
   border: 1px solid #fff;
   padding: 25px;
+}
+
+.history__inner {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.history__inner .history__desc {
+  background: #fff;
+  margin-left: -146px;
+  padding-top: 97px;
+  padding-left: 86px;
+  max-width: 480px;
+}
+.history__inner .history__desc h2 {
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+.history__inner .history__desc p {
+  color: hsl(0deg, 0%, 55%);
 }
 
 /*# sourceMappingURL=main.css.map */
