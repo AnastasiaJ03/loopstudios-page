@@ -17,3 +17,11 @@
         padding: 25px;
     }
 }
+
+@media (max-width: 600px) {
+    .hero {
+        &__title {
+            font-size: 30px;
+        }
+    }
+}

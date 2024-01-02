@@ -9,6 +9,12 @@ a {
   color: #fff;
 }
 
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
 li {
   list-style: none;
 }
@@ -20,6 +26,7 @@ body {
 img {
   display: block;
   width: 100%;
+  object-fit: cover;
 }
 
 h1,
@@ -43,6 +50,10 @@ h5 {
   padding-block: 7rem;
 }
 
+.py-3 {
+  padding-block: 3rem;
+}
+
 .section__top {
   display: flex;
   justify-content: space-between;
@@ -63,6 +74,30 @@ h5 {
   font-weight: 500;
   text-transform: uppercase;
   color: #000;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+.btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.hover {
+  position: relative;
+}
+.hover::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%);
+  opacity: 0;
+}
+.hover:hover::before {
+  opacity: 1;
 }
 
 .header {
@@ -86,6 +121,72 @@ h5 {
   display: flex;
   gap: 40px;
 }
+.nav__item {
+  position: relative;
+}
+.nav__item::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%);
+  opacity: 0;
+}
+.nav__item:hover::before {
+  opacity: 1;
+}
+
+.hamburger {
+  display: none;
+}
+
+.mobile {
+  padding: 15px;
+  font-size: 35px;
+  text-transform: uppercase;
+  color: hsl(0deg, 0%, 55%);
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  background: #000;
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+}
+.mobile.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.mobile__link {
+  color: inherit;
+  font-weight: 400;
+  font-family: "Josefin Sans", sans-serif;
+}
+.mobile__top {
+  padding-top: 30px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.mobile__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  .header .nav__item {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
 .hero {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/desktop/image-hero.jpg") no-repeat center/cover;
 }
@@ -104,6 +205,11 @@ h5 {
   padding: 25px;
 }
 
+@media (max-width: 600px) {
+  .hero__title {
+    font-size: 30px;
+  }
+}
 .history__inner {
   display: flex;
   align-items: end;
@@ -126,6 +232,31 @@ h5 {
   color: hsl(0deg, 0%, 55%);
 }
 
+@media (max-width: 900px) {
+  .history__inner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .history__image {
+    width: 100%;
+  }
+  .history__desc {
+    margin-left: 0;
+  }
+}
+@media (max-width: 900px) {
+  .history {
+    padding-block: 3rem;
+  }
+  .history__desc {
+    padding-left: 35px;
+    padding-top: 42px;
+  }
+  .history__desc h2 {
+    font-size: 25px;
+  }
+}
 .creations {
   padding-top: 0;
 }
@@ -134,8 +265,36 @@ h5 {
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
+.creations__gallery .card-1 {
+  background-image: url("../images/desktop/image-deep-earth.jpg");
+}
+.creations__gallery .card-2 {
+  background-image: url("../images/desktop/image-night-arcade.jpg");
+}
+.creations__gallery .card-3 {
+  background-image: url("../images/desktop/image-soccer-team.jpg");
+}
+.creations__gallery .card-4 {
+  background-image: url("../images/desktop/image-grid.jpg");
+}
+.creations__gallery .card-5 {
+  background-image: url("../images/desktop/image-from-above.jpg");
+}
+.creations__gallery .card-6 {
+  background-image: url("../images/desktop/image-pocket-borealis.jpg");
+}
+.creations__gallery .card-7 {
+  background-image: url("../images/desktop/image-curiosity.jpg");
+}
+.creations__gallery .card-8 {
+  background-image: url("../images/desktop/image-fisheye.jpg");
+}
 .creations__gallery .card {
   position: relative;
+  min-height: 400px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .creations__gallery .card::before {
   position: absolute;
@@ -154,6 +313,105 @@ h5 {
   max-width: 130px;
   font-size: 25px;
   z-index: 5;
+}
+
+@media (max-width: 900px) {
+  .creations__gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .creations .section__top .btn {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .creations {
+    padding-block: 3rem;
+  }
+  .creations__gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .creations .section__top {
+    justify-content: center;
+  }
+}
+@media (max-width: 375px) {
+  .creations__gallery {
+    grid-template-columns: 1fr;
+  }
+  .creations__gallery .card-1 {
+    background-image: url("../images/mobile/image-deep-earth.jpg");
+  }
+  .creations__gallery .card-2 {
+    background-image: url("../images/mobile/image-night-arcade.jpg");
+  }
+  .creations__gallery .card-3 {
+    background-image: url("../images/mobile/image-soccer-team.jpg");
+  }
+  .creations__gallery .card-4 {
+    background-image: url("../images/mobile/image-grid.jpg");
+  }
+  .creations__gallery .card-5 {
+    background-image: url("../images/mobile/image-from-above.jpg");
+  }
+  .creations__gallery .card-6 {
+    background-image: url("../images/mobile/image-pocket-borealis.jpg");
+  }
+  .creations__gallery .card-7 {
+    background-image: url("../images/mobile/image-curiosity.jpg");
+  }
+  .creations__gallery .card-8 {
+    background-image: url("../images/mobile/image-fisheye.jpg");
+  }
+  .creations__gallery .card {
+    min-height: 130px;
+    overflow: hidden;
+    background-position: center;
+  }
+}
+.footer {
+  background: #000;
+}
+.footer-nav .logo {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 22px;
+}
+.footer .container {
+  padding-top: 25px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socials p {
+  color: hsl(0deg, 0%, 55%);
+  font-size: 14px;
+  margin-right: 0px;
+}
+.socials-inner {
+  max-width: fit-content;
+  gap: 12px;
+  display: flex;
+  margin-bottom: 22px;
+  margin-left: auto;
+}
+
+@media (max-width: 900px) {
+  .footer .container {
+    flex-direction: column;
+  }
+  .footer .nav__list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer .socials-inner {
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

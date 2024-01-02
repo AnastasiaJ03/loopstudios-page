@@ -23,3 +23,32 @@
         }
     }
 }
+
+@media (max-width: 900px) {
+    .history {
+        &__inner {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        &__image {
+            width: 100%;
+        }
+        &__desc {
+            margin-left: 0;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .history {
+        padding-block: 3rem;
+        &__desc {
+            padding-left: 35px;
+            padding-top: 42px;
+            h2 {
+                font-size: 25px;
+            }
+        }
+    }
+}

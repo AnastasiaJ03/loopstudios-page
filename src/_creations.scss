@@ -4,8 +4,36 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 25px;
+        .card-1 {
+            background-image: url("../images/desktop/image-deep-earth.jpg");
+        }
+        .card-2 {
+            background-image: url("../images/desktop/image-night-arcade.jpg");
+        }
+        .card-3 {
+            background-image: url("../images/desktop/image-soccer-team.jpg");
+        }
+        .card-4 {
+            background-image: url("../images/desktop/image-grid.jpg");
+        }
+        .card-5 {
+            background-image: url("../images/desktop/image-from-above.jpg");
+        }
+        .card-6 {
+            background-image: url("../images/desktop/image-pocket-borealis.jpg");
+        }
+        .card-7 {
+            background-image: url("../images/desktop/image-curiosity.jpg");
+        }
+        .card-8 {
+            background-image: url("../images/desktop/image-fisheye.jpg");
+        }
         .card {
             position: relative;
+            min-height: 400px;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: cover;
             &::before {
                 position: absolute;
                 top: 0;
@@ -23,6 +51,68 @@
                 max-width: 130px;
                 font-size: 25px;
                 z-index: 5;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .creations {
+        &__gallery {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .section__top {
+            .btn {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .creations {
+        padding-block: 3rem;
+        &__gallery {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .section__top {
+            justify-content: center;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .creations {
+        &__gallery {
+            grid-template-columns: 1fr;
+            .card-1 {
+                background-image: url("../images/mobile/image-deep-earth.jpg");
+            }
+            .card-2 {
+                background-image: url("../images/mobile/image-night-arcade.jpg");
+            }
+            .card-3 {
+                background-image: url("../images/mobile/image-soccer-team.jpg");
+            }
+            .card-4 {
+                background-image: url("../images/mobile/image-grid.jpg");
+            }
+            .card-5 {
+                background-image: url("../images/mobile/image-from-above.jpg");
+            }
+            .card-6 {
+                background-image: url("../images/mobile/image-pocket-borealis.jpg");
+            }
+            .card-7 {
+                background-image: url("../images/mobile/image-curiosity.jpg");
+            }
+            .card-8 {
+                background-image: url("../images/mobile/image-fisheye.jpg");
+            }
+            .card {
+                min-height: 130px;
+                overflow: hidden;
+                background-position: center;
             }
         }
     }

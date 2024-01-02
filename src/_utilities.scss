@@ -9,6 +9,10 @@
     padding-block: 7rem;
 }
 
+.py-3 {
+    padding-block: 3rem;
+}
+
 .section__top {
     display: flex;
     justify-content: space-between;
@@ -29,4 +33,28 @@
     font-weight: 500;
     text-transform: uppercase;
     color: #000;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    &:hover {
+        background: #000;
+        color: #fff;
+    }
+}
+
+.hover {
+    position: relative;
+    &::before {
+        content: "";
+        width: 25px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translate(-50%);
+        opacity: 0;
+    }
+    &:hover::before {
+        opacity: 1;
+    }
 }
